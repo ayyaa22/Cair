@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CAir</title>
+        <link rel="stylesheet" href="index.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="scriptsheet" href="index.js">
+    </head>
+    <body>
+        <!--HOME-->
+        <div class="home" id="home">
+            <!--HEADER-->
+            <header>
+                <nav>
+                    <h1><a href="#home" class="logo" id="logo">CAir</a></h1>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li>
+                            <a href="#data">Data
+                                <ul class="dropdown1" id="dropdow1">
+                                    <li><a href="#temperature">Temperature</a></li>
+                                    <li><a href="#humidity">Humidity</a></li>
+                                    <li>
+                                        <a href="#air-polution">Air Polution
+                                            <ul class="dropdown2" id="dropdow2">
+                                                <li><a href="#PM2.5">PM2.5</a></li>
+                                                <li><a href="#PM10">PM10</a></li>
+                                                <li><a href="#NOx">NOx</a></li>
+                                                <li><a href="#NH3">NH3</a></li>
+                                                <li><a href="#CO2">CO2</a></li>
+                                                <li><a href="#SO2">SO2</a></li>
+                                                <li><a href="#VOC">VOC</a></li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </a>
+                        </li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <a href="#login" class="log-link" id="log-link">Login</a>
+                </nav>
+            </header>
+            <!--WELCOME PAGE-->
+            <div class="welcome-page" id="welcome-page">
+                <!--INTRO-->
+                <div class="intro" id="intro">
+                    <div><h1>{ Air Care }</h1></div>
+                    <div><p><strong><a>CAir</a></strong> is a comprehensive <strong>Air Quality Monitoring Platform</strong> designed to provide real-time data on air quality across various locations.</br>Our platform allows users, through interactive dashboards, to monitor pollutants and environmental factors that impact health and the environment.</p></div>
+                    <div><p><strong class="strong2" id="strong2">Stay Informed & Take Control of the Air you Breathe with </strong><span>CAir</span><strong class="strong2" id="strong2">&nbsp;!</strong></p></div>
+                    <div><a href="#login" class="get-started-link" id="get-started-link">Get Started</a></div>
+                </div>
+                <!--LOGIN FORM-->
+                <div class="login" id="login">
+                    <form>
+                        <h2>Login</h2>
+                        <div class="socials-login" id="socials-login">
+                            <a href="#kakaotalk"><img src="kakaotalk.png" alt="kakaotalk"></a>
+                            <a href="#google"><img src="google.png" alt="google"></a>
+                            <a href="#gethub"><img src="gethub.png" alt="gethub"></a>
+                        </div>
+                        <p>OR</p>
+                        <div class="login-boxes" id="logon-boxes">
+                            <div><input type="text" placeholder="Username" required></div>
+                            <div><input type="text" placeholder="Password" required></div>
+                            <div><a href="#forgot-password" class="other-link" id="other-link">Forgot Password?</a></div>
+                            <div><button><a href="#main" type="submit">Login</a></button></div>
+                            <div><a href="#register" class="other-link" id="other-link">Don't Have an Account Yet?<a></div>
+                        </div>
+                    </form>
+                </div>
+                <!--REGISTER FORM-->
+                <div class="register" id="register">
+                    <form>
+                        <h2>Register</h2>
+                        <div class="socials-register" id="socials-register">
+                            <a href="#kakaotalk"><img src="kakaotalk.png" alt="kakaotalk"></a>
+                            <a href="#google"><img src="google.png" alt="google"></a>
+                            <a href="#gethub"><img src="gethub.png" alt="gethub"></a>
+                        </div>
+                        <p>OR</p>
+                        <div class="register-boxes" id="register-boxes">
+                            <div><input type="text" placeholder="Full Name" required></div>
+                            <div><input type="text" placeholder="Phone Number" required></div>
+                            <div><input type="text" placeholder="Username" required></div>
+                            <div><input type="text" placeholder="Password" required></div>
+                            <div><input type="text" placeholder="Confirm Password" required></div>
+                            <div><input type="checkbox" required>Agree on&nbsp;<a>Servise&Privacy Terms</a></div>
+                            <div><button><a href="#login" type="submit">Register</a></button></div>
+                            <div><a href="#login" class="other-link" id="other-link">Already Have an Account!<a></div>
+                        </div>
+                    </form>
+                </div>
+                <!--FORGOT PASSWORD FORM-->
+                <div class="forgot-password" id="forgot-password">
+                    <h2>Reset Password</h2>
+                    <form class="conf-id" id="conf-id">
+                        <div><input type="text" placeholder="Username or Phone" required></div>
+                        <div><button type="submit"><a href="reset-pass">Next</a></button></div>
+                        <div><a href="#forgot-account" class="other-link" id="other-link">Forgot Username/Phone?</a></div>
+                    </form>
+                    <form class="reset-pass" id="reset-pass">
+                        <div><input type="text" placeholder="New Password" required></div>
+                        <div><input type="text" placeholder="Confirm Password" required></div>
+                        <div><button type="submit"><a href="#login">Reset</a></button></div>
+                    </form>
+                </div>
+                <!--FORGOT ACCOUNT FORM-->
+                <div class="forgot-account" id="forgot-account">
+                    <form>
+                        <h2>Find Your Account</h2>
+                        <div class="find-acc" id="find-acc">
+                            <div><input type="text" placeholder="Full Name" required></div>
+                            <div><button type="submit"><a href="#acc-found">Find</a></button></div>
+                        </div>
+                    </form>
+                    <form class="acc-found" id="acc-found">
+                        <div class="" id="">
+                            <div><img src="" alt=""></div>
+                        </div>
+                        <div>
+                            <a href="#login" class="other-link" id="other-link">Login</a>
+                            <a href="#forgot-password" class="other-link" id="other-link">Forgot Password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--ABOUT-->
+            <div class="about" id="about">
+                <h2>About Us</h2>
+                <p>CAir is a comprehensive tool designed to provide real-time data on air quality across various locations. Our platform allows users, through interactive dashboards, to monitor pollutants and environmental factors that impact health and the environment.</p>
+            </div>
+            <footer>
+                <hr>
+                <!--CONTACT-->
+                <div class="contact" id="contact">
+                    <div class="info" id="info">
+                        <div><p><i class='bx bx-time-five'></i>&nbsp;Mon - Fri : 9:00 Am - 5:00 Pm</p></div>
+                        <div><p><i class='bx bx-envelope'></i>&nbsp;</p></div>
+                        <div><a><i class='bx bx-world'></i>&nbsp;</a></div>
+                    </div>
+                    <form class="contact-box" id="contact-box">
+                        <h2>Contact Us</h2>
+                        <div><input type="text" placeholder="Phone Number" required></div>
+                        <div><input type="text" placeholder="Message..." required></div>
+                        <div><button type="submit">Submit</button></div>
+                    </form>
+                </div>
+                <!--END-->
+                <div class="end" id="end">
+                    <div><p>&copy;&nbsp;2024&nbsp;<a href="#home">CAir</a>.&nbsp;All Rights are Reserved</p></div>
+                    <div><a href="#resources-links" class="resources" id="resources">Resources</a></div>
+                </div>
+                <div class="resources-links" id="resources-links">
+                    <h2>Resources</h2>
+                    <div><a href="https://www.youtube.com/"></a></div>
+                    <div><a href="https://chatgpt.com/"></a></div>
+                    <div><a href="https://www.w3schools.com/"></a></div>
+                    <div><a href="https://kr.pinterest.com/"></a></div>
+                    <div><a href="https://www.remove.bg/"></a></div>
+                    <div><a href="https://boxicons.com/"></a></div>
+                    <div><a href="https://coolors.co/"></a></div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
+
+
+<!--<main class="data" id="data">
+    <div class="box temperature" id="box temperature"><a href="#temperature">Temperature (°C)</a></div>
+    <div class="box humidity" id="box humidity"><a href="humidity">Humidity (%)</a></div>
+    <div class="box pm2.5" id="box pm2.5"><a href="pm2.5">PM2.5 (µg/m³)</a></div>
+    <div class="box pm10" id="box pm10"><a href="pm10">PM10 (µg/m³)</a></div>
+    <div class="box nox" id="box nox"><a href="nox">NOx (ppb)</a></div>
+    <div class="box nh3" id="box nh3"><a href="nh3">NH3 (ppb)</a></div>
+    <div class="box co2" id="box co2"><a href="co2">CO2 (ppm)</a></div>
+    <div class="box so2" id="box so2"><a href="s02">SO2 (ppb)</a></div>
+    <div class="box voc" id="box voc"><a href="voc">VOC (ppb)</a></div>
+</main>-->
