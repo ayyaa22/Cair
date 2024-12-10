@@ -3,484 +3,417 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CAir</title>
+    <!--CAir.css-->
     <link rel="stylesheet" href="CAir.css">
+    <!--ICONES-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<!--Chart.js for charts-->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<!--Leaflet.js for maps-->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<!--Moment.js for time formatting-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-<!-- jQuery for DOM manipulation -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    <title>CAir</title>
-
+    <script src="https://kit.fontawesome.com/54483b633d.js" crossorigin="anonymous"></script>
+    <!--J.S LBRARIES-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="CAir.js"></script>
   </head>
   <body>
     <header>
-        <!--NAV-BAR-->
         <nav>
-            <div class="nav-bar" id="nav-bar">
-                <!--LOGO-->
-                <h1><a href="#home" class="logo" id="logo">CAir</a></h1>
-                <!--LIST-->
-                <ul class="list" id="list">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li>
-                        <a href="#data">Data<i class='bx bx-chevron-down'></i></a>
-                        <!--DROPDOWN LIST A-->
-                        <ul class="dropdown-a" id="dropdown-a">
-                            <li><a href="#temperature-and-humidity-details">Temperature</a></li>
-                            <li><a href="#clouds-details">Clouds</a></li>
-                            <li><a href="#temperature-and-humidity-details">Humidity</a></li>
-                            <li><a href="#wind-speed-details">Wind Speed</a></li>
-                            <li>
-                                <a href="#air-pollution-details" class="air-pollutants" id="air-pollutants">Air Pollution<i class='bx bx-chevron-down'></i></a>
-                                <!--DROPDOWN LIST B-->
-                                <ul class="dropdown-b" id="dropdown-b">
-                                    <li><a href="#PM2.5">PM2.5</a></li>
-                                    <li><a href="#PM10">PM10</a></li>
-                                    <li><a href="#NOx">NOx</a></li>
-                                    <li><a href="#NH3">NH3</a></li>
-                                    <li><a href="#CO2">CO2</a></li>
-                                    <li><a href="#SO2">SO2</a></li>
-                                    <li><a href="#VOC">VOC</a></li>
-                                    <li><a href="#CO">CO</a></li>
-                                    <li><a href="#O3">O3</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#pressure-details">Pressure</a></li>
-                            <li><a href="#uv-index-details">UV Index</a></li>
-                            <li><a href="#visibility-details">Visibility</a></li>
-                            <li><a href="#sunrise-sunset-details">Sun Rise / Sun Set</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <!--LOGIN Link-->
-                <a href="#login" class="login-link" id="login-link">Login</a>
-            </div>
-            <!--HAMBURGER MENU-->
-            <div class="hamburger-menu" id="hamburger-menu">
-                <span class="bar" id="bar"></span>
-                <span class="bar" id="bar"></span>
-                <span class="bar" id="bar"></span>
-            </div>
-            <!--PROFILE LINK-->
-            <div class="profile-link" id="profile-link">
-                <a href="#profile"><img src="user.png" alt="profile-image" class="profile-image" id="profile-image"></a>
-                <a href="#profile"></a>
-            </div>
-        </nav>
+            <!--LOGO-->
+            <h1><a href="#" class="logo" id="logo" onclick="showHome()">CAir</a></h1>
+                <!--NAV-BAR-->
+                <div class="nav-bar" id="nav-bar">
+                    <!--LIST-->
+                    <ul>
+                        <li><a href="#" onclick="showHome()">Home</a></li>
+                        <li><a href="#" onclick="showAbout()">About</a></li>
+                        <li>
+                            <a href="#" onclick="showApp()">Data<i class='bx bx-chevron-down'></i></a>
+                            <!--DROPDOWN LIST A-->
+                            <ul class="dropdown-a" id="dropdown-a">
+                                <li><a href="#" onclick="showDetails()">Details</a></li>
+                                <!--<li><a href="#" onclick="showTemperature()">Temperature</a></li>
+                                <li><a href="#" onclick="showRealFeel()">Real Feel</a></li>
+                                <li><a href="#" onclick="showClouds()">Clouds</a></li>
+                                <li><a href="#" onclick="showHumidity()">Humidity</a></li>
+                                <li><a href="#" onclick="showWindSpeed()">Wind Speed</a></li>
+                                <li>
+                                    <a href="#" class="air-pollution" id="air-pollution" onclick="showAirPollution()">Air Pollution<i class='bx bx-chevron-down'></i></a>-->
+                                    <!--DROPDOWN LIST B-->
+                                    <!--<ul class="dropdown-b" id="dropdown-b">
+                                        <li><a href="#" onclick="showPM25()">PM2.5</a></li>
+                                        <li><a href="#" onclick="showPM10()">PM10</a></li>
+                                        <li><a href="#" onclick="showNOx()">NOx</a></li>
+                                        <li><a href="#" onclick="showNH3()">NH3</a></li>
+                                        <li><a href="#" onclick="showCO2()">CO2</a></li>
+                                        <li><a href="#" onclick="showSO2()">SO2</a></li>
+                                        <li><a href="#" onclick="showVOC()">VOC</a></li>
+                                        <li><a href="#" onclick="showCO()">CO</a></li>
+                                        <li><a href="#" onclick="showO3()">O3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" onclick="showPressure()">Pressure</a></li>
+                                <li><a href="#" onclick="showVisibility()">Visibility</a></li>
+                                <li><a href="#" onclick="showUVindex()">UV Index</a></li>
+                                <li><a href="#" onclick="showSunrise()">Sunrise</a></li>
+                                <li><a href="#" onclick="showSunset()">Sunset</a></li>-->
+                            </ul>
+                        </li>
+                        <li><a href="#" onclick="showContact()">Contact</a></li>
+                    </ul>
+                    <!--LOGIN Link-->
+                    <a href="#" class="header-login-link"  id="header-login-link" onclick="showLogin()">Login</a>
+                </div>
+                <!--HAMBURGER MENU
+                <div class="hamburger-menu" id="hamburger-menu" onclick="">
+                    <i class='bx bx-menu'></i>    
+                    <i class='bx bx-x'></i>    
+                </div>-->
+                <!--PROFILE LINK-->
+                <div class="header profile-link hidden" id="header-profile-link" onclick="showProfile()">
+                    <u>
+                        <li>
+                            <a href="#" onclick="showProfile()"><img src="user.png" alt="profile-image" class="profile-image" id="profile-image">username</a>
+                            <ul>
+                                <li><a href="#" onclick="showSettings()"><i class="fa-light fa-gear"></i>Setting</a></li>
+                                <li><a href="#" onclick="logOut()">Logout</a></li>
+                            </ul>
+                        </li>
+                    </u>
+                </div>
+            </nav>
     </header>
     <main>
         <!--HOME-->
-        <div class="home" id="home">
-            <div><h1>{ AIR CARE }</h1></div>
-            <div><p><strong><a href="home">CAir</a></strong> is a comprehensive <strong>Air Quality & Environmental Monitoring Platform</strong> designed to provide real-time data on air quality and environmental conditions across various locations.</br>Our platform allows users, through interactive dashboards, to monitor pollutants and key environmental factors that impact health and the environment.</p></div>
-            <div class="strong2" id="strong2"><p><strong>Stay Informed & Take Control of the Air you Breathe with <a href="home">CAir</a>!</strong></p></div>
-            <div><a href="#data" class="get-started-link" id="get-started-link" onclick="data()">Get Started</a></div>
+        <div id="home" class="hidden">
+            <div id="intro">
+                <div><h1>{ AIR CARE }</h1></div>
+                <div><p><strong><a href="#" onclick="showHome()">CAir</a></strong> is a comprehensive <strong>Air Quality & Environmental Monitoring Platform</strong> designed to provide real-time data on air quality and environmental conditions across various locations.</br>Our platform allows users, through interactive dashboards, to monitor pollutants and key environmental factors that impact health and the environment.</p></div>
+                <div id="last"><p><strong>Stay Informed & Take Control of the Air you Breathe with <a href="#" onclick="showHome()">CAir</a>!</strong></p></div>
+                <div><a href="#" onclick="showRegister()">Get Started</a></div>
+            </div>
+            <!--<div id="slider">
+                <div id="slide-track">
+                    <div id="slide">
+                        <a href="#" onclick="showTemperature()"><img src="user.png"></a>
+                    </div>
+                    <div id="slide">
+                        <a href="#" onclick="showClouds()"><img src="user.png"></a>
+                    </div>
+                    <div id="slide">
+                        <a href="#" onclick="showHumidity()"><img src="user.png"></a>
+                    </div>
+                    <div id="slide">
+                        <a href="#" onclick="showWindSpeed()"><img src="user.png"></a>
+                    </div>
+                    <div id="slide">
+                        <a href="#" onclick="showAirPollution()"><img src="user.png"></a>
+                    </div>
+                    <div id="slide">
+                        <a href="#" onclick="showPressure()"><img src="user.png"></a>
+                    </div>
+                    <div id="slide">
+                        <a href="#" onclick="showVisibility()"><img src="user.png"></a>
+                    </div>
+                    <div id="slide">
+                        <a href="#" onclick="showUVindex()"><img src="user.png"></a>
+                    </div>
+                    <div id="slide">
+                        <a href="#" onclick="showSunriseSunset()"><img src="user.png"></a>
+                    </div>
+                </div>
+            </div>-->
         </div>
         <!--ABOUT-->
-        <div class="about" id="home">
-            <div><h1>What is CAir?</h1></div>
-            <div><p><strong><a href="home">CAir</a></strong> is a comprehensive <strong>Air Quality & Environmental Monitoring Platform</strong> that provides real-time insights into air quality and essential environmental conditions across diverse locations.</br>With dynamic and interactive dashboards, users can track pollutants, temperature, real feel, visibility, wind speed, UV index, humidity, pressure, and sunrise/sunset times, making it an all-in-one solution.</br><a href="#home">CAir</a> empowers individuals to make informed decisions for healthier living, safer outdoor planning, and increased environmental awareness.</p></div>
-            <!--<div>
-                <div><h4>Platform Keypoints:</h4></div>
-                <div>
-                    <ol type="1">
-                        <li>
-                            Comprehensive Monitoring Solution
-                            <ul><li><p><a href="#home">CAir</a> is an all-in-one platform that provides real-time insights into air quality and environmental conditions across multiple locations.</p></li></ul>
-                        </li>
-                        <li>
-                            Real-Time Data Tracking
-                            <ul>
-                                <li>
-                                    <p>Users can access live data on various environmental factors including:</p>
-                                    <ol>
-                                        <li><strong>Air Quality (Pollutants)</strong></li>
-                                        <li><strong>Temperature</strong></li>
-                                        <li><strong>Real Feel</strong></li>
-                                        <li><strong>Visibility</strong></li>
-                                        <li><strong>Wind Speed</strong></li>
-                                        <li><strong>UV Index</strong></li>
-                                        <li><strong>Humidity</strong></li>
-                                        <li><strong>Pressure</strong></li>
-                                        <li><strong>Sunrise/Sunset Times</strong></li>
-                                    </ol>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            Dynamic and Interactive Dashboards
-                            <ul><li><p>Provides intuitive, customizable dashboards for easy visualization and analysis of environmental data.</p></li></ul>
-                        </li>
-                        <li>
-                            User Empowerment for Healthier Living
-                            <ul><li><p><a href="#home">CAir</a> enables users to make informed decisions that promote healthier lifestyles and outdoor activities.</p></li></ul>
-                        </li>
-                        <li>
-                            Environmental Awareness and Safer Planning
-                            <ul><li><p>The platform helps users stay informed and plan ahead by providing accurate data on key environmental factors that impact daily life.</p></li></ul>
-                        </li>
-                        <li>
-                            Multi-Location Coverage
-                            <ul><li><p>The platform supports multiple locations, making it valuable for individuals and organizations worldwide.</p></li></ul>
-                        </li>
-                        <li>
-                            Holistic Approach
-                            <ul><li><p>Focuses on a wide range of environmental data, allowing users to monitor more than just air quality, including crucial factors like UV index, wind, and pressure.</p></li></ul>
-                        </li>
-                        <li>
-                            Increased Awareness and Action
-                            <ul><li><p>By offering comprehensive, real-time environmental data, <a href="#home">CAir</a> promotes greater awareness of environmental conditions and encourages proactive measures for health and safety.</p></li></ul>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </div>-->
-        <!--DATA-->
-        <div class="data" id="data">
-            <div class="search" id="search">
-                <form>
-                    <input type="text" class="city" id="city" placeholder="Enter a city name">
-                    <button>
-                        <i class='bx bx-search'></i>                
-                    </button>
-                </form>
-            </div>
-            <div class="temp-result" id="temp-result">
-                <section>
-                    <figure class="city-name" id="city-name">
-                        <figcaption>City</figcaption> 
-                        <img src="https://flagsapi.com/GB/shiny/32.png">
-                    </figure>
-                    <figure class="temperature" id="temperature">
-                        <img src="https://openweathermap.org/img/wn/10d@4x.png">
-                        <figcaption>
-                            <span>°C</span>
-                        </figcaption> 
-                    </figure>
-                    <p class="real-feel" id="real-feel">Real Feel</p>
-                </section>
-            </div>
-            <div class="AQ-E-result" id="AQ-E-result">
-                <ul>
-                    <!-- Clouds -->
-                    <li class="clouds" id="clouds">
-                        <a>
-                            <span>Clouds</span>
-                            <i class="fa-solid fa-cloud"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <!-- Humidity -->
-                    <li class="humidity" id="humidity">
-                        <a>
-                            <span>Humidity</span>
-                            <i class="fa-solid fa-water"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <!-- Pressure -->
-                    <li class="pressure" id="pressure">
-                        <a>
-                            <span>Pressure</span>
-                            <i class="fa-solid fa-gauge-high"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <!-- Wind Speed -->
-                    <li class="wind-speed" id="wind-speed">
-                        <a>
-                            <span>Wind Speed</span>
-                            <i class="fa-solid fa-wind"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <!-- Visibility -->
-                    <li class="visibility" id="visibility">
-                        <a>
-                            <span>Visibility</span>
-                            <i class="fa-solid fa-eye"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <!-- Sunrise and Sunset -->
-                    <li class="sunrise-sunset">
-                        <a>
-                            <span>Sunrise</span>
-                            <i class="fa-solid fa-sun"></i>
-                            <span></span>
-                            <span>Sunset</span>
-                            <i class="fa-solid fa-moon"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <!-- UV Index -->
-                    <li class="uv-index" id="uv-index">
-                        <a>
-                            <span>UV Index</span>
-                            <i class="fa-solid fa-sun"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                    <!-- Air Quality -->
-                    <li class="air-quality" id="air-quality">
-                        <a>
-                            <span>Air Quality</span>
-                            <i class="fa-solid fa-leaf"></i>
-                            <span></span>
-                            <ul>
-                                <!-- PM2.5 -->
-                                <li class="pm25" id="pm25">
-                                    <a>
-                                        <span>PM2.5</span>
-                                        <i class="fa-solid fa-smog"></i>
-                                        <span></span>
-                                    </a>
-                                </li>
-                                <!-- PM10 -->
-                                <li class="pm10" id="pm10">
-                                    <a>
-                                        <span>PM10</span>
-                                        <i class="fa-solid fa-cloud-sun"></i>
-                                        <span></span>
-                                    </a>
-                                </li>
-                                <!-- NO₂ -->
-                                <li class="no2" id="no2">
-                                    <a>
-                                        <span>NO₂</span>
-                                        <i class="fa-solid fa-molecule"></i>
-                                        <span></span>
-                                    </a>
-                                </li>
-                                <!-- NH₃ -->
-                                <li class="nh3" id="nh3">
-                                    <a>
-                                        <span>NH₃</span>
-                                        <i class="fa-solid fa-vial"></i>
-                                        <span></span>
-                                    </a>
-                                </li>
-                                <!-- CO -->
-                                <li class="co" id="co">
-                                    <a>
-                                        <span>CO</span>
-                                        <i class="fa-solid fa-coins"></i>
-                                        <span></span>
-                                    </a>
-                                </li>
-                                <!-- CO₂ -->
-                                <li class="co2" id="co2">
-                                    <a>
-                                        <span>CO₂</span>
-                                        <i class="fa-solid fa-cloud-meatball"></i>
-                                        <span></span>
-                                    </a>
-                                </li>
-                                <!-- SO₂ -->
-                                <li class="so2" id="so2">
-                                    <a>
-                                        <span>SO₂</span>
-                                        <i class="fa-solid fa-biohazard"></i>
-                                        <span></span>
-                                    </a>
-                                </li>
-                                <!-- VOC -->
-                                <li class="voc" id="voc">
-                                    <a>
-                                        <span>VOC</span>
-                                        <i class="fa-solid fa-flask"></i>
-                                        <span></span>
-                                    </a>
-                                </li>
-                                <!-- O₃ -->
-                                <li class="o3" id="o3">
-                                    <a>
-                                        <span>O₃</span>
-                                        <i class="fa-solid fa-atom"></i>
-                                        <span></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div id="charts-container">
-                <canvas id="lineChart" width="400" height="200"></canvas>
-            </div>
-            <div>
-                <canvas id="barChart" width="400" height="200"></canvas>
-            </div>
-            <div>
-                <canvas id="doughnutChart" width="400" height="200"></canvas>
-            </div>
+        <div class="hidden" id="about">
+            <div><h1>What is <a href="#" onclick="showHome()">CAir</a>?</h1></div>
+            <div><p><strong><a href="#" onclick="showHome()">CAir</a></strong> is a comprehensive <strong>Air Quality & Environmental Monitoring Platform</strong> that provides real-time insights into air quality and essential environmental conditions across diverse locations.</br>With dynamic and interactive dashboards, users can track pollutants, temperature, real feel, visibility, wind speed, UV index, humidity, pressure, and sunrise/sunset times, making it an all-in-one solution.</br><strong><a href="#" onclick="showHome()">CAir</a></strong> empowers individuals to make informed decisions for healthier living, safer outdoor planning, and increased environmental awareness.</p></div>
         </div>
-        
-        
+        <!--DATA-->
+        <div id="app">
+            <div class="" id="search"><h1>CAir</h1>
+            <input type="text" id="city" placeholder="Enter city name">
+            <button onclick="getWeather()">Get Weather</button>
+            <div id="weatherInfo"></div></div>
+
+            <div class="" id="charts"><div class="chart-container">
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="doughnutChart"></canvas>
+            </div></div>
+        </div>
+        </div>
+    
         <!--CONACT-->
-        <div class="contact" id="contact">
-            <!--<div class="contact-info" id="contact-info">
+        <div class="hidden" id="contact">
+            <div>
                 <p><i class='bx bx-time-five'></i>&nbsp;Mon - Fri : 9:00 AM - 5:00 PM</p>
-                <p><i class='bx bx-envelope'></i>&nbsp;h</p>
+                <p><i class='bx bx-envelope'></i>&nbsp;cairwebapp@gmail.com</p>
                 <p><i class='bx bx-world'></i>&nbsp;<a href="">h</a></p>
-            </div>-->
-            <div class="contact-form" id="contact-form">
-                <form>
+            </div>
+            <div>
+                <form action="https://api.web3forms.com/submit" method="POST">
                     <h2>Contact Us</h2>
-                    <div><input type="email" placeholder="Email" required><!--<i class='bx bx-envelope'></i>--></div>
-                    <div><input type="text" placeholder="Message..." required></div>
-                    <div><button type="submit" class="submit-message" id="submit-message">Submit</button></div>
+                    <div>
+                        <input type="hidden" name="access_key" value="4aa35bd2-70ed-45d8-affc-7c81e2f99a36">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div><input type="text" name="message" placeholder="Message..."></div>
+                    <div><button type="submit">Submit</button></div>
                 </form>
             </div>
         </div>
         <!--LOGIN FORM-->
-        <div class="login" id="login">
+        <div class="hidden" id="login">
             <form>
                 <h2>Login</h2>
-                <div class="socials-login" id="socials-login">
-                    <a href="#google"><i class='bx bxl-google'></i></a>
-                    <a href="#kakaotalk"><i class='bx bxl-kickstarter'></i></a>
-                    <a href="#github"><i class='bx bxl-github'></i></a>
+                <div>
+                    <a href="#"><i class='bx bxl-google'></i></a>
+                    <a href="#"><i class='bx bxl-kickstarter'></i></a>
+                    <a href="#"><i class='bx bxl-github'></i></a>
                 </div>
                 <p>OR</p>
-                <div class="login-boxes" id="login-boxes">
-                    <div><input type="text" placeholder="Username" required><!--<i class='bx bx-user'></i>--></div>
-                    <div><input type="text" placeholder="Password" required><!--<i class='bx bxs-lock-alt'></i><i class='bx bx-lock-open-alt'></i>--></div>
-                    <div><a href="#find-pass" class="forgot-password-link" id="forgot-password-link" onclick="find_pass()">Forgot Password?</a></div>
-                    <div><button><a href="#data" type="submit" onclick="data()">Login</a></button></div>
-                    <div><a href="#register" class="go-to-register" id="go-to-register">Don't Have an Account Yet?<a></div>
+                <div>
+                    <div>
+                        <input type="text" placeholder="Username" required>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Password" required>
+                    </div>
+                    <div><a href="#" onclick="showAccConfirmation()">Forgot Password?</a></div>
+                    <div><button type="submit" onclick="showData()">Login</button></div>
+                    <div><a href="#" onclick="showRegister()">Don't Have an Account Yet?<a></div>
                 </div>
             </form>
         </div>
         <!--REGISTER FORM-->
-        <div class="register" id="register">
+        <div class="hidden" id="register">
             <form>
                 <h2>Register</h2>
-                <div class="socials-register" id="socials-register">
-                    <a href="#google"><i class='bx bxl-google'></i></a>
-                    <a href="#kakaotalk"><i class='bx bxl-kickstarter'></i></a>
-                    <a href="#github"><i class='bx bxl-github'></i></a>
+                <div>
+                    <a href="#"><i class='bx bxl-google'></i></a>
+                    <a href="#"><i class='bx bxl-kickstarter'></i></a>
+                    <a href="#"><i class='bx bxl-github'></i></a>
                 </div>
                 <p>OR</p>
-                <div class="register-boxes" id="register-boxes">
-                    <div required><input class="other-than-checkbox" id="other-than-checkbox" type="text" placeholder="Full Name" required></div>
-                    <div required><input class="other-than-checkbox" id="other-than-checkbox" type="tel" placeholder="Phone Number" required><!--<i class='bx bx-phone'></i>--></div>
-                    <div required><input class="other-than-checkbox" id="other-than-checkbox" type="text" placeholder="Username" required><!--<i class='bx bx-user'></i>--></div>
-                    <div required><input class="other-than-checkbox" id="other-than-checkbox" type="text" placeholder="Password" required><!--<i class='bx bxs-lock-alt'></i><i class='bx bx-lock-open-alt'></i>--></div>
-                    <div required><input class="other-than-checkbox" id="other-than-checkbox" type="text" placeholder="Confirm Password" required><!--<i class='bx bxs-lock-alt'></i><i class='bx bx-lock-open-alt'></i>--></div>
-                    <div class="checkbox" id="checkbox" required><input type="checkbox" required><label>Agree on&nbsp;<a href="#policy-and-privacy">Policy&Privacy</a>&nbsp;Terms</label></div>
-                    <div><button><a href="#login" type="submit" onclick="login()">Register</a></button></div>
-                    <div><a href="#login" class="go-to-login" id="go-to-login" onclick="login()">Already Have an Account!<a></div>
+                <div>
+                    <div><input type="text" placeholder="Full Name" required></div>
+                    <div>
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Username" required>
+                    </div>
+                    <div>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div>
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                    <div><input type="checkbox" required><label>&nbsp;Agree on&nbsp;<a href="#" onclick="showPP()">Policy&Privacy</a>&nbsp;Terms</label></div>
+                    <div><input type="checkbox" ><label>&nbsp;&nbsp;Recieve SMS Notification</label></div>
+                    <div><button type="submit" onclick="showLogin()">Register</button></div>
+                    <div><a href="#" onclick="showLogin()">Already Have an Account!<a></div>
                 </div>
             </form>
         </div>
-        <!--FORGOT-PASS FORM-->
-        <div class="forgot-password" id="forgot-password">
-            <!--ACC-CONFIRMATION FORM-->
-            <div class="acc-confirmation" id="acc-confirmation">
-                <form>
-                    <h2>Reset Password</h2>
-                    <div><input type="text" placeholder="Username or Phone" required><!--<i class='bx bx-phone'></i><i class='bx bx-user'></i>--></div>
-                    <div><button type="submit"><a href="#reset-pass" onclick="reset_pass()">Next</a></button></div>
-                    <div class="links" id="links">
-                        <a href="#login" class="go-to-login" id="go-to-login" onclick="login()">Login</a>
-                        <a href="#forgot-account" class="forgot-account-link" id="forgot-account-link" onclick="find_acc()">Forgot Username/Phone?</a>
-                    </div>
-                </form>
-            </div>
-            <!--RESET-PASS FORM-->
-            <div class="reset-pass" id="reset-pass">
-                <form>
-                    <h2>Reset Password</h2>
-                    <div><input type="text" placeholder="New Password" required><!--<i class='bx bxs-lock-alt'></i><i class='bx bx-lock-open-alt'></i>--></div>
-                    <div><input type="text" placeholder="Confirm Password" required><!--<i class='bx bxs-lock-alt'></i><i class='bx bx-lock-open-alt'></i>--></div>
-                    <div><button type="submit"><a href="#login" onclick="login()">Reset</a></button></div>
-                    <div><a href="#login" class="go-to-login" id="go-to-login" onclick="login()">Login</a>
-                </form>
-            </div>
+        <!--ACC-CONFIRMATION FORM-->
+        <div class="hidden" id="acc-confirmation">
+            <form>
+                <h2>Reset Password</h2>
+                <div><input type="text" placeholder="Username or Phone" required><!--<i class='bx bx-phone'></i><i class='bx bx-user'></i>--></div>
+                <div><button type="submit" onclick="showPassReset()">Next</button></div>
+                <div><a href="#" onclick="showLogin()">Login</a></div>
+                <div><a href="#" onclick="showFindAcc()">Forgot Username / Phone Number?</a></div>
+            </form>
         </div>
-        <!--FORGOT-ACC FORM-->
-        <div class="forgot-account" id="forgot-account">
-            <!--FIND-ACC FORM-->
-            <div class="find-acc" id="find-acc">
-                <form>
-                    <h2>Find Your Account</h2>
-                    <div><input type="text" placeholder="Full Name" required></div>
-                    <div><button type="submit"><a href="#acc-found" onclick="acc_found()">Find</a></button></div>
-                    <div><a href="#login" class="go-to-login" id="go-to-login" onclick="login()">Login</a></div>
-                </form>
-            </div>
-            <!--ACC-FOUND FORM-->
-            <div class="acc-found" id="acc-found">
-                <form>
-                    <div class="profile-info" id="profile-info">
-                        <div><img src="user.png" alt="profile-image" class="profile-image" id="profile-image"></div>
-                        <div>
-                            <label>Full Name : </label>
-                            <input type="text">
-                        </div>
-                        <div>
-                            <label>Username : </label>
-                            <input type="text">
-                        </div>
-                        <div>
-                            <label>Phone Number : </label>
-                            <input type="tel">
-                        </div>
-                        <div>
-                            <label>Email : </label>
-                            <input type="email">
-                        </div>
-                        <div>
-                            <label>Location : </label>
-                            <input type="text">
-                        </div>
-                        <div>
-                            <label>Password : </label>
-                            <input type="password">
-                        </div>
-                    </div>
-                    <div class="links" id="links">
-                        <a href="#login" class="go-to-login" id="go-to-login" onclick="login()">Login</a>
-                        <a href="#forgot-password" class="forgot-password-link" id="forgot-password-link" onclick="find_pass()">Forgot Password?</a>
-                    </div>
-                </form>                
-            </div>
+        <!--RESET-PASS FORM-->
+        <div class="hidden" id="pass-reset">
+            <form>
+                <h2>Reset Password</h2>
+                <div>
+                    <input type="password" placeholder="New Password" required>
+                    <i class="fa-regular fa-eye" id="eye" onclick="showEyeSlash()"></i>
+                    <i class="fa-regular fa-eye-slash hidden" id="eye-slash" onclick="showEye()"></i>
+                </div>
+                <div>
+                    <input type="password" placeholder="Confirm Password" required>
+                </div>
+                <div><button type="submit" onclick="showLogin()">Reset</button></div>
+                <div><a href="#" onclick="showLogin()">Login</a></div>
+            </form>
         </div>
-    </main>
-    <footer>
-        <!--FOOTER-->
-        <div class="footer" id="footer">
-            <p><a href="#resources-links">APIs & Resources</a></p>
-            <p class="line" id="line">|</p>
-            <p><a href="#policy-and-privacy">Policy & Privacy Terms</a></p>
-            <p class="line" id="line">|</p>
-            <p>&copy;&nbsp;2024&nbsp;<a href="#home">CAir</a>.&nbsp;All Rights are Reserved</p>
+        <!--FIND-ACC FORM-->
+        <div class="hidden" id="find-acc">
+            <form>
+                <h2>Find Your Account</h2>
+                <div><input type="text" placeholder="Full Name" required></div>
+                <div><button type="submit" onclick="showAccFound()">Find</button></div>
+                <div><a href="#" onclick="showLogin()">Login</a></div>
+            </form>
+        </div>
+        <!--ACC-FOUND FORM-->
+        <div class="hidden" id="acc-found">
+            <form>
+                <div>
+                    <div><img src="user.png" alt="profile-image"></div>
+                    <div>
+                        <label>Full Name : </label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label>Username : </label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label>Phone Number : </label>
+                        <input type="tel">
+                    </div>
+                    <div>
+                        <label>Email : </label>
+                        <input type="email">
+                    </div>
+                    <div>
+                        <label>Location : </label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label>Password : </label>
+                        <input type="password">
+                    </div>
+                </div>
+                <div><a href="#" onclick="showLogin()">Login</a></div>
+                <div><a href="#" onclick="showAccConfirmation()">Forgot Password?</a></div>
+            </form>                
         </div>
         <!--POLICY & PRIVACY-->
-        <div class="policy-and-privacy" id="policy-and-privacy"></div>
-        <!--RESOUCES-->
-        <div class="APIs-and-resources" id="APIs-and-resources">
-            <h4>APIs</h4>
-            <p><a></a></p>
-            <p><a></a></p>
-            <p><a></a></p>
-            <p><a></a></p>
-            <h4>Resources</h4>
-            <p><a href="https://www.youtube.com/"></a></p>
-            <p><a href="https://chatgpt.com/"></a></p>
-            <p><a href="https://www.w3schools.com/"></a></p>
-            <p><a href="https://kr.pinterest.com/"></a></p>
-            <p><a href="https://www.remove.bg/"></a></p>
-            <p><a href="https://boxicons.com/"></a></p>
-            <p><a href="https://coolors.co/"></a></p>
+        <div class="hidden" id="pp">
+            <p>ho</p>
+        </div>        
+        <!--REVIEWS-->
+        <div>
+            <div class="hidden" id="reviews-id">
+                <form>
+                    <h2>Review</h2>
+                    <button type="submit"><a href="#" onclick="showMemberReviews()">Member</a></button>
+                    <button type="submit"><a href="#" onclick="showNonMemberReviews()">Not a Member</a></button>
+                </form>
+            </div>
+            <div class="hidden" id="member-reviews">
+                <form>
+                    <h2>Review</h2>
+                    <div><input type="text" placeholder="Username" required></div>
+                    <div>
+                        <select id="rating" required>
+                            <option value="5">5 - Excellent</option>
+                            <option value="4">4 - Very Good</option>
+                            <option value="3">3 - Good</option>
+                            <option value="2">2 - Fair</option>
+                            <option value="1">1 - Poor</option>
+                        </select>
+                    </div>
+                    <div><input type="text" placeholder="Tell us your opinion..."></div>
+                    <div><button type="submit">Share</button></div>
+                </form>
+            </div>
+            <div class="hidden" id="non-member-reviews">
+                <form>
+                    <h2>Review</h2>
+                    <div><input type="text" placeholder="Full Name" required></div>
+                    <div><input type="email" placeholder="Email" required></div>
+                    <div>
+                        <select id="rating" required>
+                            <option value="5">5 - Excellent</option>
+                            <option value="4">4 - Very Good</option>
+                            <option value="3">3 - Good</option>
+                            <option value="2">2 - Fair</option>
+                            <option value="1">1 - Poor</option>
+                        </select>
+                    </div>
+                    <div><input type="text" placeholder="Tell us your opinion..."></div>
+                    <div><button type="submit">Share</button></div>
+                </form>
+            </div>
+        </div>
+        <!--WHY CAIR-->
+        <div class="hidden" id="ycair">
+            <div>
+                <h1>Why <a href="#" onclick="showHome()">CAir</a>?</h1>
+                <strong>Your All-in-One Environmental Companion!</strong>
+            </div>
+            <div>
+                <h4>Comprehensive Data</h4>
+                <p>Real-time air quality, weather, and UV insights at your fingertips.</p>
+            </div>
+            <div>
+                <h4>Simple & Reliable</h4>
+                <p>Intuitive dashboards, accurate data, and daily SMS updates wherever you are.</p>
+            </div>
+            <div>
+                <h4>Healthier Choices</h4>
+                <p>Plan your day and protect your loved ones with ease.</p>
+            </div>
+            <div>
+                <a href="#" onclick="showRegister()">Join Us Now</a>
+            </div>
+        </div>     
+        <!--F&Q-->   
+        <div class="hidden" id="fq">
+            <p>If you have other questions please <a href="#" onclick="showContact()">Contact Us</a>!</p>
+        </div>
+        <div class="hidden" id="settings">
+            <p>Hi</p>
+        </div>
+    </main>
+    <!--FOOTER-->
+    <footer>
+        <div class="footer" id="footer">
+            <div class="footer-top" id="footer-top">
+                <div>
+                    <h4>Learn</h4>
+                    <div><a href="#" onclick="showHome()">Home</a></div>
+                    <div><a href="#" onclick="showData()">Data</a></div>
+                    <div><a href="#" onclick="showRegister()">Get Started</a></div>
+                </div>
+                <div>
+                    <h4>About Us</h4>
+                    <div><a href="#" onclick="showAbout()">About</a></div>
+                    <div><a href="#" onclick="showReviewsId()">Reviews</a></div>
+                    <div><a href="#" onclick="showyCAir()">Why CAir?</a></div>
+                </div>
+                <div>
+                    <h4>Help</h4>
+                    <div><a href="#" onclick="showContact()">Contact Us</a></div>
+                    <div><a href="#" onclick="showFQ()">F&Q</a></div>
+                    <div><a href="#" onclick="showSettings()">Settings</a></div>
+                </div>
+            </div>
+            <div class="socials" id="socials">
+                <a href="https://www.instagram.com/cairwebapp/" traget="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61570371239526&is_tour_dismissed" traget="_blank"><i class='bx bxl-facebook-square'></i></a>
+                <a href="https://www.youtube.com/channel/UCIgxgWVaxJB4S8Cje3wtrkg" traget="_blank"><i class='bx bxl-youtube' ></i></a>
+            </div>
+            <div class="language" id="language">
+                <select>
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="ko">Korean</option>
+                    <option value="ar">Arabic</option>
+                    <option value="hi">Indian</option>
+                    <option value="sp">Spanish</option>
+                    <option value="ru">Russian</option>
+                    <option value="ch">Chinese</option>
+                    <option value="ja">Japanese</option>
+                </select>
+            </div>
+            <div class="footer-bottom" id="footer-bottom">
+                <div><a href="#" onclick="showPP()">Policy & Privacy Terms</a></div>
+                <div><a href="https://github.com/ayyaa22/Cair" target="_blank" >Source Code & Others</a></div>
+                <div><p>&copy;&nbsp;2024&nbsp;<a href="#" onclick="showHome()">CAir</a>.&nbsp;All Rights are Reserved</p></div>
+            </div>
         </div>
     </footer>
     <!--CAir.js-->
@@ -488,3 +421,34 @@
   </body>
 </html>
 
+
+
+<!--<i class="fa-regular fa-temperature-three-quarters"></i>
+<i class="fa-solid fa-cloud"></i>
+<i class="fa-solid fa-sun"></i>
+<i class="fa-solid fa-moon"></i>
+<i class="fa-light fa-water"></i>
+<i class="fa-light fa-leaf"></i>
+<i class="fa-light fa-weight-scale"></i>
+<i class="fa-regular fa-flask"></i>
+<i class="fa-solid fa-vial"></i>
+<i class="fa-light fa-atom"></i>
+<i class="fa-regular fa-flask-vial"></i>
+<i class="fa-regular fa-vial-circle-check"></i>
+<i class="fa-solid fa-cloud-rain"></i>
+<i class="fa-solid fa-cloud-moon-rain"></i>
+<i class="fa-solid fa-cloud-moon"></i>
+<i class="fa-solid fa-cloud-showers-heavy"></i>
+<i class="fa-solid fa-rainbow"></i>
+<i class="fa-solid fa-cloud-sun-rain"></i>
+<i class="fa-solid fa-cloud-sun"></i>
+<i class="fa-solid fa-cloud-bolt"></i>
+<i class="fa-solid fa-snowflake"></i>
+<i class="fa-solid fa-droplet"></i>
+<i class="fa-regular fa-vial-virus"></i>
+<i class="fa-solid fa-skull-crossbones"></i>
+<i class="fa-regular fa-radiation"></i>
+<i class="fa-solid fa-virus-covid"></i>
+<i class="fa-solid fa-virus"></i>
+<i class="fa-regular fa-bolt"></i>—->
+    
